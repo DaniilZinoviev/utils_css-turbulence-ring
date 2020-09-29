@@ -13,6 +13,7 @@ body {
   position: relative;
   width: 600px;
   height: 600px;
+  filter: url(#wavy);
 
   &::before {
     content: "";
@@ -27,6 +28,17 @@ body {
     -webkit-box-reflect: below 10px
       linear-gradient(transparent, transparent, #0002);
     animation: animate 5s linear infinite;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    bottom: 100px;
+    right: 100px;
+    border: 20px solid white;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #fff, inset 0 0 20px #fff;
   }
 
   &:nth-child(2) {

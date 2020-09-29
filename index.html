@@ -9,5 +9,20 @@
   <body>
     <div class="circle"></div>
     <div class="circle"></div>
+
+    <svg style="display: none">
+      <filter id="wavy">
+        <feTurbulence baseFrequency="0.009" numOctaves="5" seed="2" type="">
+          <animate
+            attributeName="baseFrequency"
+            values="0.02;0.009;0.02"
+            dur="60s"
+            repeatCount="indefinite"
+          />
+        </feTurbulence>
+
+        <feDisplacementMap in="SourceGraphic" scale="30" />
+      </filter>
+    </svg>
   </body>
 </html>
