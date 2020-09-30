@@ -11,9 +11,10 @@ body {
 
 .circle {
   position: relative;
+  // filter: url(#wavy);
+
   width: 600px;
   height: 600px;
-  filter: url(#wavy);
 
   &::before {
     content: "";

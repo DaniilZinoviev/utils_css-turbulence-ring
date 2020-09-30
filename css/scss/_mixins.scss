@@ -1,0 +1,10 @@
+@mixin bp($width) {
+  @media screen and (min-width: $width) {
+    @content;
+  }
+}
+@mixin bp-rev($width) {
+  @media screen and (max-width: $width) {
+    @content;
+  }
+}
