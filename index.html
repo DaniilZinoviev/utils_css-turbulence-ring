@@ -7,12 +7,39 @@
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
-    <div class="circle"></div>
-    <div class="circle"></div>
+    <header>
+      <div class="filters">
+        <!-- <button class="toggler">&gt;</button> -->
+        <div class="filters-bar">
+          <div class="filter">
+            <label for="filter--displacementMap">feDisplacementMap scale</label>
+            <input
+              id="filter--displacementMap"
+              type="number"
+              step="1"
+              min="5"
+              max="500"
+              value="30"
+              placeholder="Turbulance"
+              title="Turbulance"
+            />
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="circle"></div>
+      <div class="circle"></div>
+    </main>
 
     <svg style="display: none">
       <filter id="wavy">
-        <feTurbulence baseFrequency="0.009" numOctaves="5" seed="2">
+        <feTurbulence
+          id="feTurbulance"
+          baseFrequency="0.009"
+          numOctaves="5"
+          seed="2"
+        >
           <animate
             attributeName="baseFrequency"
             values="0.02;0.009;0.02"
@@ -21,8 +48,14 @@
           />
         </feTurbulence>
 
-        <feDisplacementMap in="SourceGraphic" scale="30" />
+        <feDisplacementMap
+          id="feDisplacementMap"
+          in="SourceGraphic"
+          scale="30"
+        />
       </filter>
     </svg>
+
+    <script src="./js/main.js"></script>
   </body>
 </html>
