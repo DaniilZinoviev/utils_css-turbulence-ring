@@ -1,3 +1,5 @@
+import './scss/style.scss';
+
 document.addEventListener("DOMContentLoaded", function () {
   var feDisplacementMapFilter = new Filter(
     "#filter--displacementMap",
