@@ -1,11 +1,7 @@
-import './scss/style.scss';
+import "./scss/style.scss";
 
 document.addEventListener("DOMContentLoaded", function () {
-  new Filter(
-    "#filter--displacementMap",
-    "#feDisplacementMap",
-    "scale"
-  );
+  new Filter("#filter--displacementMap", "#feDisplacementMap", "scale");
 });
 
 function Filter(inputSelector, targetSelector, property) {

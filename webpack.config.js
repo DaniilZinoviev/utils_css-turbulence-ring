@@ -1,57 +1,58 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const ESlintPlugin = require("eslint-webpack-plugin");
 
 module.exports = (env = {}) => {
-  const { MODE: mode = 'development'} = env;
-  const isProd = mode === 'production';
-  const isDev = mode === 'development';
+  const { MODE: mode = "development" } = env;
+  const isProd = mode === "production";
+  const isDev = mode === "development";
 
   const styleLoaders = () => {
-    const loaders = ['css-loader'];
-    let firstLoader = 'style-loader';
+    const loaders = ["css-loader"];
+    let firstLoader = "style-loader";
     if (isProd) {
       firstLoader = {
         loader: MiniCssExtractPlugin.loader,
         options: {
-          publicPath: './'
-        }
-      }
+          publicPath: "./",
+        },
+      };
     }
     loaders.unshift(firstLoader);
     return loaders;
-  }
+  };
 
   const getPlugins = () => {
     const plugins = [
       new HtmlWebpackPlugin({
-        template: 'src/index.html'
-      })
+        template: "src/index.html",
+      }),
+      new ESlintPlugin(),
     ];
     if (isProd) {
-      plugins.push(new MiniCssExtractPlugin())
+      plugins.push(new MiniCssExtractPlugin());
     }
     return plugins;
-  }
+  };
 
   return {
-    mode: isProd ? 'production' : 'development',
-    entry: './src/main.js',
+    mode: isProd ? "production" : "development",
+    entry: "./src/main.js",
     module: {
       rules: [
         {
           test: /\.css$/,
-          use: styleLoaders()
+          use: styleLoaders(),
         },
         {
           test: /\.s[ac]ss$/,
-          use: [...styleLoaders(), 'sass-loader']
-        }
-      ]
+          use: [...styleLoaders(), "sass-loader"],
+        },
+      ],
     },
     plugins: getPlugins(),
     devServer: {
-      open: true
-    }
-  }
-
-}
+      open: true,
+    },
+  };
+};

@@ -19,6 +19,8 @@
   "homepage": "https://github.com/DaniilZinoviev/utils_css-turbulence-ring#readme",
   "devDependencies": {
     "css-loader": "^5.0.1",
+    "eslint": "^7.14.0",
+    "eslint-webpack-plugin": "^2.4.0",
     "html-webpack-plugin": "^4.5.0",
     "mini-css-extract-plugin": "^1.3.1",
     "node-sass": "^5.0.0",
