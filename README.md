@@ -2,8 +2,6 @@
 
 This is an example of looking very good some animated rings, with turbulence and hue-rotate filters.
 
-Live example: http://rings.danzino.com/
-
 [GIF presentation](https://i.imgur.com/AE0p8qL.gif)
 
 ## Technologies
