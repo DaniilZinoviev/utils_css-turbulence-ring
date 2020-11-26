@@ -1,7 +1,7 @@
 import './scss/style.scss';
 
 document.addEventListener("DOMContentLoaded", function () {
-  var feDisplacementMapFilter = new Filter(
+  new Filter(
     "#filter--displacementMap",
     "#feDisplacementMap",
     "scale"
@@ -21,7 +21,7 @@ function Filter(inputSelector, targetSelector, property) {
     return;
   }
 
-  input.addEventListener("input", function (e) {
+  input.addEventListener("input", function () {
     target.setAttribute(property, this.value);
   });
 }
