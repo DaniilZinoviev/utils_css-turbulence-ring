@@ -24,7 +24,7 @@ module.exports = (env = {}) => {
   const getPlugins = () => {
     const plugins = [
       new HtmlWebpackPlugin({
-        filename: 'src/index.html'
+        template: 'src/index.html'
       })
     ];
     if (isProd) {
