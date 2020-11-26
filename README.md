@@ -2,7 +2,11 @@
 
 This is an example of looking very good some animated rings, with turbulence and hue-rotate filters.
 
-[GIF presentation](https://i.imgur.com/AE0p8qL.gif)
+## Illustration
+
+![Screenshot](https://i.imgur.com/NbZNgKj.png)
+
+And, here you can find [GIF presentation](https://i.imgur.com/AE0p8qL.gif).
 
 ## Technologies
 Primary:
